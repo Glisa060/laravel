@@ -35,11 +35,11 @@
 
                 <hr>
 
-                <form method="post" action="/posts">
+                <form method="post" action="/posts/{{ $post->id }}/comments">
                     {{csrf_field()}}
                         <label for="body">Comment</label>
                         <textarea class="form-control" name="body" id="body" rows="3"></textarea>
-                    <button type="submit" name="publish" class="btn btn-primary">Publish</button>
+                    <button type="submit" name="publish" class="btn btn-primary">Add a Comment</button>
                 </form>
 
             </div>

@@ -8,9 +8,7 @@ Route::post('/posts', 'PostsController@store');
 
 Route::get( '/posts/{post}','PostsController@show');
 
-Route::post('posts/{id}','PostsController@store_comments');
-
-Route::get('/posts/show', 'PostsController@show');
+Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 
 
