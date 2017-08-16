@@ -12,17 +12,21 @@
 
     <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
 
-    {{ $post->body }}
+    <div class="blog-post">
+        <div class="container">
+            <p class="navbar-text"> {{ $post->body }} </p>
+        </div>
+    </div>
 
+        <p class="text-primary">Comments:</p>
 
     <div class="comments">
         @foreach($post->comments as $comment)
+            <ul class="text-info">
 
-            <ul class="list-group">
+                <li class="comments">
 
-                <li class="list-group-item">
-
-                    <strong>{{ $comment->created_at->diffforhumans() }}</strong>
+                    <strong>{{ $comment->created_at->diffforhumans() }}</strong> :
 
                     {{ $comment->body }}
 
