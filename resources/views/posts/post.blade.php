@@ -2,38 +2,39 @@
 
     <h2 class="blog-post-title">
 
-        <a href="/posts/{{ $post->id }}">
+        <a class="navbar-link" href="/posts/{{ $post->id }}">
 
-            {{ $post->title }}
+            <p2 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">{{ $post->title }}</div></p2>
 
         </a>
 
     </h2>
 
-    <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
+    <p class="blog-post-meta; text-center" style="margin-top: 2%">{{ $post->created_at->toFormattedDateString() }}</p>
 
-    <div class="blog-post">
-        <div class="container">
-            <p class="navbar-text"> {{ $post->body }} </p>
+    <div class="text-center" style="margin-top: 5%">
+        <div class="list-group-item" style="margin-bottom: 5%">
+            {{ $post->body }}
         </div>
     </div>
 
-        <p class="text-primary">Comments:</p>
+    <p2 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">Comments: </div></p2>
 
     <div class="comments">
         @foreach($post->comments as $comment)
-            <ul class="text-info">
 
-                <li class="comments">
+            <ul class="list-group">
+                <li class="list-group" style="margin-top: 5%">
+                    <div class="text-center">
+                        <strong>{{ $comment->created_at->diffforhumans() }}</strong> :
+                    </div>
 
-                    <strong>{{ $comment->created_at->diffforhumans() }}</strong> :
-
-                    {{ $comment->body }}
-
+                    <div class="text-center">
+                        {{ $comment->body }}
+                    </div>
                 </li>
-
             </ul>
-
         @endforeach
     </div>
+
 </div><!-- /.blog-post -->
