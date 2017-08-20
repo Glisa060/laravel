@@ -4,7 +4,7 @@
 
         <a class="navbar-link" href="/posts/{{ $post->id }}">
 
-            <p2 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">{{ $post->title }}</div></p2>
+            <p1 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">{{ $post->title }}</div></p1>
 
         </a>
 
@@ -15,12 +15,12 @@
     <div class="text-center" style="margin-top: 5%">
         <div class="list-group-item" style="margin-bottom: 5%">
             {{ $post->body }}
-        </div>
+        </div>`
     </div>
 
-    <p2 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">Comments: </div></p2>
+    <p1 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">Comments: </div></p1>
 
-    <div class="comments">
+    <
         @foreach($post->comments as $comment)
 
             <ul class="list-group">
@@ -28,7 +28,7 @@
                     <div class="text-center">
                         <strong>{{ $comment->created_at->diffforhumans() }}</strong> :
                     </div>
-
+                    div class="comments">
                     <div class="text-center">
                         {{ $comment->body }}
                     </div>
@@ -37,4 +37,3 @@
         @endforeach
     </div>
 
-</div><!-- /.blog-post -->
