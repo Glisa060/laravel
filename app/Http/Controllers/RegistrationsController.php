@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class RegistrationsController extends Controller
@@ -22,8 +19,8 @@ class RegistrationsController extends Controller
 
     	$user = User::create(request(['user_name', 'password', 'email']));
 
-    	Auth::login($user);
+	    auth()->login( $user );
 
-    	return redirect()->home();
+	    return redirect()->home();
     }
 }

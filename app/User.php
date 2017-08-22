@@ -2,6 +2,12 @@
 
 namespace App;
 
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Notifications\Notifiable;
+
 /**
  * App\User
  *
@@ -19,9 +25,13 @@ namespace App;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUserName($value)
  * @mixin \Eloquent
+ * @property string|null $remember_token
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken( $value )
  */
-class User extends Model
-{
+class User extends Model implements Authenticatable, CanResetPasswordContract {
+
+	use Notifiable, AuthenticableTrait, CanResetPassword;
+
 	public function posts () {
 		return $this->hasMany(Post::class);
 	}
