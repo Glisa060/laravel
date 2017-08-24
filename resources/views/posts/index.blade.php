@@ -15,8 +15,6 @@
                     <ul class="pager">
                         <li><a href="#">Previous</a></li>
                         <li><a href="#">Next</a></li>
-                        <li><a href="/posts/create">Create a new post!</a> </li>
-                        <li><a href="/register">Sign up!</a></li>
                     </ul>
                 </nav>
             </div><!-- /.blog-main -->

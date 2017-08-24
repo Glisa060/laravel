@@ -7,7 +7,7 @@ use App\User;
 class RegistrationsController extends Controller
 {
     public function create() {
-    	return view('sessions.create');
+	    return view( 'registration.create' );
     }
 
     public function store() {
@@ -18,7 +18,11 @@ class RegistrationsController extends Controller
 		    'email'     => 'required|unique:users|email',
 	    ]);
 
-    	$user = User::create(request(['user_name', 'password', 'email']));
+	    $user = User::create( [
+		    'user_name' => request( 'user_name' ),
+		    'password'  => bcrypt( request( 'password' ) ),
+		    'email'     => request( 'email' ),
+	    ] );
 
 	    auth()->login( $user );
 
