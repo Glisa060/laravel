@@ -7,7 +7,9 @@
             <a class="blog-nav-item" href="#">Press</a>
             <a class="blog-nav-item" href="#">New hires</a>
             <a class="blog-nav-item" href="#">About</a>
-            <a class="blog-nav-item ml-auto" href="#">John Doe</a>
+            @if (Auth::check())
+                <a class="blog-nav-item" href="#">{{Auth::user()->user_name}}</a>
+            @endif
         </nav>
     </div>
 </div>

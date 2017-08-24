@@ -13,5 +13,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class Model extends Eloquent {
 
 	protected $fillable = ['title', 'body', 'post_id', 'user_id', 'user_name',
-		'password', 'email', 'password_confirmation'];
+		'password',
+		'email',
+	];
 }

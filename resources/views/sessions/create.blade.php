@@ -9,20 +9,18 @@
             <form method="post" action="/register">
                 {{csrf_field()}}
                 <label for="user_name">User Name</label>
-                <input  class="form-control" name="user_name"   required>
+                <input class="form-control" id="user_name" name="user_name" required>
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="password"   required>
-                <label for="password_confirmation">Confirm Password</label>
-                <input type="password" class="form-control" name="password_confirmation"   required>
+                <input type="password" class="form-control" id="password" name="password" required>
+                <label for="password_confirmation">Password Confirmation</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                       required>
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email"   required>
+                <input type="email" class="form-control" id="email" name="email" required>
                 <button name="publish" style="margin-top: 5%" class="btn btn-primary">Register</button>
             </form>
         </div>
 
-        <div class="form-group">
             @include('layouts.errors')
-        </div>
-
     </div>
 @stop

@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
@@ -30,9 +30,14 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Model implements Authenticatable, CanResetPasswordContract {
 
-	use Notifiable, AuthenticableTrait, CanResetPassword;
+	use Notifiable, AuthenticatableTrait, CanResetPassword;
 
 	public function posts () {
 		return $this->hasMany(Post::class);
+	}
+
+	public function publish( Post $post ) {
+
+		$this->posts()->save( $post );
 	}
 }

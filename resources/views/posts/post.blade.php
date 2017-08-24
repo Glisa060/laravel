@@ -10,17 +10,20 @@
 
     </h2>
 
-    <p class="blog-post-meta; text-center" style="margin-top: 2%">{{ $post->created_at->toFormattedDateString() }}</p>
+    <p class="blog-post-meta; text-center" style="margin-top: 2%">
+        {{ $post->user->name }}
+        {{ $post->created_at->toFormattedDateString() }}
+
+    </p>
 
     <div class="text-center" style="margin-top: 5%">
         <div class="list-group-item" style="margin-bottom: 5%">
             {{ $post->body }}
-        </div>`
+        </div>
     </div>
 
     <p1 style="margin-top: 10%; margin-bottom: 3%" class="blog-post-title"><div class="text-center">Comments: </div></p1>
 
-    <
         @foreach($post->comments as $comment)
 
             <ul class="list-group">
