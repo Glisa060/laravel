@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.33 on 2017-08-22.
+ * Generated for Laravel 5.4.35 on 2017-08-25.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12275,6 +12275,19 @@ namespace  {
             {    
                 return \Illuminate\Database\Eloquent\Builder::doesntHave($relation, $boolean, $callback);
             }
+
+	    /**
+	     * Add a relationship count / exists condition to the query with an
+	     * "or".
+	     *
+	     * @param string $relation
+	     *
+	     * @return \Illuminate\Database\Eloquent\Builder|static
+	     * @static
+	     */
+	    public static function orDoesntHave( $relation ) {
+		    return \Illuminate\Database\Eloquent\Builder::orDoesntHave( $relation );
+	    }
          
             /**
              * Add a relationship count / exists condition to the query with where clauses.
@@ -12318,6 +12331,20 @@ namespace  {
             {    
                 return \Illuminate\Database\Eloquent\Builder::whereDoesntHave($relation, $callback);
             }
+
+	    /**
+	     * Add a relationship count / exists condition to the query with where
+	     * clauses and an "or".
+	     *
+	     * @param string $relation
+	     * @param \Closure $callback
+	     *
+	     * @return \Illuminate\Database\Eloquent\Builder|static
+	     * @static
+	     */
+	    public static function orWhereDoesntHave( $relation, $callback = NULL ) {
+		    return \Illuminate\Database\Eloquent\Builder::orWhereDoesntHave( $relation, $callback );
+	    }
          
             /**
              * Add subselect queries to count the relations.
