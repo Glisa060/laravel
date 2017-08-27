@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 class SessionsController extends Controller
 {
 	public function __construct() {
@@ -24,7 +23,6 @@ class SessionsController extends Controller
 				'message' => 'Please check your credentials and try again.',
 			] );
 		}
-
 		return redirect()->home();
 	}
 }
